@@ -32,17 +32,17 @@ This Spring Boot web application provides a robust system for user registration,
 ## Installation and Setup
 1. **Clone the Repository**:
    
-   git clone <repository_url>
+  - git clone <repository_url>
    
 2. **Database Configuration**:
 
-  Install SQL Server and create a database schema.
-  Update application.properties with your database credentials.
+  - Install SQL Server and create a database schema.
+  - Update application.properties with your database credentials.
   
 3. **Build and Run**:
 
-  mvn clean install
-  java -jar target/<jar_filename>.jar
+  - mvn clean install
+  - java -jar target/<jar_filename>.jar
   
 4. **Access the Application**:
   Open a web browser and go to http://localhost:8080.
