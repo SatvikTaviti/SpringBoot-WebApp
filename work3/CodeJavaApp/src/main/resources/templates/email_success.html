@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mail Success</title>
+    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+  </head>
+  <body>
+    <div class="container text-center">
+        <div>
+            <h1>Mail has been sent successfully.</h1>    
+        </div>
+        <h3><a th:href="@{/list_users}">Back to users data</a></h3>
+        <h3><a th:href="@{/register}"> Register</a></h3>
+        <h3><a th:href="@{/login}">Login</a></h3>
+    </div>
+  </body>
+</html>
+
+

@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Registration</title>
+    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css"/>
+    <style>
+        .error {
+            color: red;
+            font-size: 0.9em;
+            display: none;
+        }
+    </style>
+    <script>
+        function validateEmail(input) {
+            const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            const errorMsg = document.getElementById('email-error');
+
+            if (!emailPattern.test(input.value)) {
+                errorMsg.style.display = 'block';
+            } else {
+                errorMsg.style.display = 'none';
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container text-center">
+        <div>
+            <h1>User Registration - Sign Up</h1>
+        </div>
+        <form th:action="@{/process-register}" method="post" style="max-width: 600px;" th:object="${user}">
+            <div class="m-3">
+                <div class="form-group row">
+                    <label class="col-form-label col-4">E-mail</label>
+                    <div class="col-8">
+                        <input type="email" class="form-control" th:field="*{email}" required oninput="validateEmail(this)" onblur="validateEmail(this)" />
+                        <span id="email-error" class="error">Invalid email format</span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-form-label col-4">Password</label>
+                    <div class="col-8">
+                        <input type="password" class="form-control" th:field="*{password}" required minlength="6" maxlength="20"/>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-form-label col-4">Firstname</label>
+                    <div class="col-8">
+                        <input type="text" class="form-control" th:field="*{firstname}" required minlength="2" maxlength="20"/>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-form-label col-4">Lastname</label>
+                    <div class="col-8">
+                        <input type="text" class="form-control" th:field="*{lastname}" required minlength="2" maxlength="20"/>
+                    </div>
+                </div>
+                <div>
+                    <button type="submit" class="btn btn-primary">Sign Up</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

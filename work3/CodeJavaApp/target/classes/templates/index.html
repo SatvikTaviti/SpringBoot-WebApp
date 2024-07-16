@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Registration Form</title>
+    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+    <style>
+      body {
+        background: linear-gradient(to right, rgb(240, 246, 131), #6610f2);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        color: white;
+      }
+      .container {
+        background: white;
+        padding: 2rem;
+        border-radius: 8px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        max-width: 500px;
+        width: 100%;
+        text-align: center;
+        color: #343a40;
+      }
+      .container h1 {
+        font-weight: bold;
+        color: #007bff;
+      }
+      .container h3 {
+        margin-top: 1rem;
+      }
+      .container a {
+        text-decoration: none;
+        color: #007bff;
+        transition: color 0.3s;
+      }
+      .container a:hover {
+        color: #0056b3;
+      }
+      .btn-custom {
+        margin-top: 1rem;
+        padding: 0.5rem 1rem;
+        font-size: 1.2rem;
+        border-radius: 5px;
+        transition: background 0.3s, color 0.3s;
+      }
+      .btn-custom:hover {
+        background: #007bff;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container text-center">
+      <div class="mb-4">
+        <h1>Welcome to Registration Form</h1>    
+        
+      </div>
+      <div>
+        <a th:href="@{/list_users}" class="btn btn-outline-primary btn-custom">List All Users</a>
+      </div>
+      <div>
+        <a th:href="@{/register}" class="btn btn-outline-success btn-custom">Register</a>
+      </div>
+      <div>
+        <a th:href="@{/login}" class="btn btn-outline-info btn-custom">Login</a>
+      </div>
+    </div>
+  </body>
+</html>
